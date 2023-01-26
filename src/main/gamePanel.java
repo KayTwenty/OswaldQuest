@@ -36,40 +36,62 @@ public class gamePanel extends JPanel implements Runnable {
         gameThread = new Thread(this);
         gameThread.start();
     }
+//    // Sleep Constructor game loop
+//    @Override
+//    public void run() {
+//        // Aim at 60 FPS
+//        double drawInterval = 1000000000/FPS; // 0.1666 seconds
+//        double nextDrawTime = System.nanoTime() + drawInterval;
+//
+//        while (gameThread != null) {
+//
+//            // 1 Update: Update information such as characters positions
+//            update();
+//
+//            // 2 Draw: Draw the screen with the update information
+//            repaint();
+//
+//            try {
+//                // Checks when how much time remaining until the next draw time
+//                double remainingTime = nextDrawTime - System.nanoTime();
+//
+//                // sleep() works in millis seconds we need to convert
+//                remainingTime = remainingTime/1000000;
+//
+//                if (remainingTime < 0) {
+//                    remainingTime = 0;
+//                }
+//
+//                Thread.sleep((long) remainingTime);
+//
+//                // When sleep time is over and the thread is awakened
+//                nextDrawTime += drawInterval;
+//
+//            } catch (InterruptedException e) {
+//                // TODO: Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//
+//        }
+//    }
 
-    @Override
+    // Delta Constructor game Loop
     public void run() {
         // Aim at 60 FPS
         double drawInterval = 1000000000/FPS; // 0.1666 seconds
-        double nextDrawTime = System.nanoTime() + drawInterval;
+        double delta = 0;
+        long lastTime = System.nanoTime();
+        long currentTime;
 
         while (gameThread != null) {
+            currentTime = System.nanoTime();
+            delta += (currentTime - lastTime) / drawInterval;
+            lastTime = currentTime;
 
-            // 1 Update: Update information such as characters positions
-            update();
-
-            // 2 Draw: Draw the screen with the update information
-            repaint();
-
-            try {
-                // Checks when how much time remaining until the next draw time
-                double remainingTime = nextDrawTime - System.nanoTime();
-
-                // sleep() works in millis seconds we need to convert
-                remainingTime = remainingTime/1000000;
-
-                if (remainingTime < 0) {
-                    remainingTime = 0;
-                }
-
-                Thread.sleep((long) remainingTime);
-
-                // When sleep time is over and the thread is awakened
-                nextDrawTime += drawInterval;
-
-            } catch (InterruptedException e) {
-                // TODO: Auto-generated catch block
-                e.printStackTrace();
+            if (delta >= 1) {
+                update();
+                repaint();
+                delta--;
             }
 
         }
