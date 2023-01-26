@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class gamePanel extends JPanel implements Runnable {
+
+    private static final int FPS = 60;
     // Screen settings
     final int originalTitleSize = 16; // 16x16 tile
     final int scale = 3;
@@ -37,6 +39,10 @@ public class gamePanel extends JPanel implements Runnable {
 
     @Override
     public void run() {
+        // Aim at 60 FPS
+        double drawInterval = 1000000000/FPS; // 0.1666 seconds
+        double nextDrawTime = System.nanoTime() + drawInterval;
+
         while (gameThread != null) {
 
             // 1 Update: Update information such as characters positions
@@ -44,6 +50,27 @@ public class gamePanel extends JPanel implements Runnable {
 
             // 2 Draw: Draw the screen with the update information
             repaint();
+
+            try {
+                // Checks when how much time remaining until the next draw time
+                double remainingTime = nextDrawTime - System.nanoTime();
+
+                // sleep() works in millis seconds we need to convert
+                remainingTime = remainingTime/1000000;
+
+                if (remainingTime < 0) {
+                    remainingTime = 0;
+                }
+
+                Thread.sleep((long) remainingTime);
+
+                // When sleep time is over and the thread is awakened
+                nextDrawTime += drawInterval;
+
+            } catch (InterruptedException e) {
+                // TODO: Auto-generated catch block
+                e.printStackTrace();
+            }
 
         }
     }
