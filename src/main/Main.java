@@ -7,7 +7,7 @@ public class Main {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setTitle("Oswald's World");
+        window.setTitle("Oswald's Quest");
 
         gamePanel gamePanel = new gamePanel();
         window.add(gamePanel);

@@ -33,10 +33,11 @@ public class gamePanel extends JPanel implements Runnable {
             // System.out.println("The game loop is running.");
 
             // 1 Update: Update information such as characters positions
+            update();
 
             // 2 Draw: Draw the screen with the update information
-
-
+            repaint();
+            
         }
     }
 
@@ -44,7 +45,15 @@ public class gamePanel extends JPanel implements Runnable {
 
     }
 
-    public void paintComponent() {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        Graphics2D g2 = (Graphics2D)g;
+
+        // Draw the player using Graphics2D
+        g2.setColor(Color.white);
+        g2.fillRect(100, 100, tileSize, tileSize);
+        g2.dispose();
 
     }
 }
