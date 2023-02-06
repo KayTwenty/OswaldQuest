@@ -36,44 +36,6 @@ public class gamePanel extends JPanel implements Runnable {
         gameThread = new Thread(this);
         gameThread.start();
     }
-//    // Sleep Constructor game loop
-//    @Override
-//    public void run() {
-//        // Aim at 60 FPS
-//        double drawInterval = 1000000000/FPS; // 0.1666 seconds
-//        double nextDrawTime = System.nanoTime() + drawInterval;
-//
-//        while (gameThread != null) {
-//
-//            // 1 Update: Update information such as characters positions
-//            update();
-//
-//            // 2 Draw: Draw the screen with the update information
-//            repaint();
-//
-//            try {
-//                // Checks when how much time remaining until the next draw time
-//                double remainingTime = nextDrawTime - System.nanoTime();
-//
-//                // sleep() works in millis seconds we need to convert
-//                remainingTime = remainingTime/1000000;
-//
-//                if (remainingTime < 0) {
-//                    remainingTime = 0;
-//                }
-//
-//                Thread.sleep((long) remainingTime);
-//
-//                // When sleep time is over and the thread is awakened
-//                nextDrawTime += drawInterval;
-//
-//            } catch (InterruptedException e) {
-//                // TODO: Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//
-//        }
-//    }
 
     // Delta Constructor game Loop
     public void run() {
@@ -112,13 +74,13 @@ public class gamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        if (keyH.upPressed == true) {
+        if (keyH.upPressed) {
             playerY -= playerSpeed;
-        } else if (keyH.downPressed == true) {
+        } else if (keyH.downPressed) {
             playerY += playerSpeed;
-        } else if (keyH.leftPressed == true) {
+        } else if (keyH.leftPressed) {
             playerX -= playerSpeed;
-        } else if (keyH.rightPressed == true) {
+        } else if (keyH.rightPressed) {
             playerX += playerSpeed;
         }
     }
