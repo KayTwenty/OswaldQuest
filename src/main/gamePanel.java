@@ -1,11 +1,12 @@
 package main;
 
+import entity.Player;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class gamePanel extends JPanel implements Runnable {
 
-    private static final int FPS = 60;
     // Screen settings
     final int originalTitleSize = 16; // 16x16 tile
     final int scale = 3;
@@ -16,8 +17,12 @@ public class gamePanel extends JPanel implements Runnable {
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
 
+    // FPS
+    private static final int FPS = 60;
+
     keyHandler keyH = new keyHandler();
     Thread gameThread;
+    Player player = new Player(this, keyH);
 
     // Set player's default position
     int playerX = 100;
