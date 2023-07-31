@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="OswaldQuest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/OswaldQuest_jar</output-path>
+    <root id="archive" name="OswaldQuest.jar">
+      <element id="module-output" name="OswaldQuest" />
+    </root>
+  </artifact>
+</component>
