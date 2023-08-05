@@ -74,7 +74,7 @@ public class gamePanel extends JPanel implements Runnable {
 
             // Print FPS
             if (timer >= 1000000000) {
-                System.out.println("FPS: " + drawCount);
+                System.out.println("Game FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
             }
