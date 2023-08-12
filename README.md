@@ -12,7 +12,7 @@ Welcome to the world of Oswald's Quest! Embark on an exciting journey as you del
 ## Prerequisites
 Before you dive into the development of Oswald's Quest, make sure you have the following essentials installed and set up:
 - JDK 18 (Java Development Kit): Ensure you have the latest JDK installed to leverage the newest features and optimizations in your development journey.
-- IntelliJ IDEA: We recommend using IntelliJ IDEA as your integrated development environment. It provides a user-friendly interface and powerful tools to streamline your coding process.
+- IntelliJ IDEA: We recommend using IntelliJ IDEA as your integrated development environment. It provides a user-friendly interface and powerful tools to streamline your coding process. Make sure to mark `res` folder as src folder.
 
 ## Disclaimer
 Oswald's Quest is currently a work in progress. As such, certain elements of the game may still be under development or refinement. We appreciate your understanding and patience as we strive to deliver a polished and exceptional gaming experience.
