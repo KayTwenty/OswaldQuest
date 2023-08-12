@@ -1,24 +1,40 @@
-# Compiled class file
-*.class
+# IntelliJ IDEA
+.idea/
 
-# Log file
+# Compiled class files
+/out/
+
+# Logs
 *.log
 
-# BlueJ files
-*.ctxt
+# Gradle
+.gradle/
+build/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Maven
+target/
 
-# Package Files #
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Compiled Java
+*.class
+
+# JAR files
 *.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-/out/
+# User-specific files
+*.iml
+*.ipr
+*.iws
+*.DS_Store
+
+# macOS metadata
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
