@@ -1,8 +1,8 @@
 # Oswald's Quest: An Epic Java RPG Adventure
 
 <div>
-  <img src=".github/preview1.png" alt="Preview Image 1" width="500"/>
-  <img src=".github/preview2.png" alt="Preview Image 2" width="500"/>
+  <img src=".github/preview1.png" alt="Preview Image 1" width="300"/>
+  <img src=".github/preview2.png" alt="Preview Image 2" width="300"/>
 </div>
 
 ## Project Description
