@@ -13,10 +13,10 @@ public class Main {
         window.setTitle("Oswald's Quest");
 
         // Icon Properties
-        URL url = Main.class.getResource("/icons/logo.png");
-        assert url != null;
-        ImageIcon imgIcon = new ImageIcon(url);
-        window.setIconImage(imgIcon.getImage());
+        //URL url = Main.class.getResource("/icons/logo.png");
+        //assert url != null;
+        //ImageIcon imgIcon = new ImageIcon(url);
+        //window.setIconImage(imgIcon.getImage());
 
         // Add the game panel
         gamePanel gamePanel = new gamePanel();
