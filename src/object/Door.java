@@ -12,6 +12,9 @@ public class Door extends SuperObject {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        // Make door a solid
+        collision = true;
     }
 
 }
