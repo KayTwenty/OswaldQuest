@@ -1,9 +1,6 @@
 # IntelliJ IDEA
 .idea/
 
-# Compiled class files
-/out/
-
 # Logs
 *.log
 
@@ -18,12 +15,6 @@ target/
 .classpath
 .project
 .settings/
-
-# Compiled Java
-*.class
-
-# JAR files
-*.jar
 
 # User-specific files
 *.iml
