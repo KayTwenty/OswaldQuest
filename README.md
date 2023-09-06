@@ -3,7 +3,7 @@
 # Oswald's Quest: An Epic Java RPG Adventure
 
 > ✂ Built with AstroJS and TypeScript
-> <br>![LastCommit](https://img.shields.io/github/last-commit/KayTwenty/OswaldQuest?style=for-the-badge)  <br>
+> <br>![LastCommit](https://img.shields.io/github/last-commit/KayTwenty/OswaldQuest?style=for-the-badge)
 
 ---
 
