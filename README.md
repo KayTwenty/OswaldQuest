@@ -2,7 +2,7 @@
 
 # Oswald's Quest: An Epic Java RPG Adventure
 
-> ✂ Built with Java 18 & Java Swing
+> ✂ Built with JDK 18 & Java Swing
 > <br>![LastCommit](https://img.shields.io/github/last-commit/KayTwenty/OswaldQuest?style=for-the-badge)
 
 ---
