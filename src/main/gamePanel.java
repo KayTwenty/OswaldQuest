@@ -57,7 +57,7 @@ public class gamePanel extends JPanel implements Runnable {
     // Delta Constructor game Loop
     public void run() {
         // Aim at 60 FPS
-        double drawInterval = (double) 1000000000 /FPS; // 0.1666 seconds
+        double drawInterval = (double) 1000000000 / FPS; // 0.1666 seconds
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -97,7 +97,7 @@ public class gamePanel extends JPanel implements Runnable {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
 
         // Tiles
         tileM.draw(g2);

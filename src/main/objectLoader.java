@@ -6,6 +6,7 @@ import object.Key;
 
 public class objectLoader {
     gamePanel gp;
+
     public objectLoader(gamePanel gp) {
         this.gp = gp;
     }
