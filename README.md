@@ -1,9 +1,16 @@
-<img width="170" height="170" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" src=".github/GitIcon.png">
-
-# Oswald's Quest: An Epic Java RPG Adventure
-
-> ➽ Built with JDK 18 & Java Swing
----
+<p align="center">
+  <a>
+    <img src=".github/GitIcon.png" alt="Logo" width="150" height="150">
+  </a>
+  
+  <h1 align="center">Oswald's Quest</h1>
+  <p align="center">
+  <img src="https://img.shields.io/github/last-commit/KayTwenty/OswaldQuest?style=for-the-badge" alt="Commit"/>
+  </p>
+  <p align="center">
+    Embark on an RPG journey crafted with Java Swing
+  </p>
+</p>
 
 ## Project Description
 Welcome to the world of Oswald's Quest! Embark on an exciting journey as you delve into the creation of a fully functional Java RPG game, brought to life using the Java Swing libraries. Immerse yourself in the realm of programming and gaming, and witness your ideas evolve into an engaging gaming experience.
