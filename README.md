@@ -3,8 +3,6 @@
 # Oswald's Quest: An Epic Java RPG Adventure
 
 > ➽ Built with JDK 18 & Java Swing
-
-![Java](https://img.shields.io/badge/Java-F8981D?logo=java&logoColor=white&style=for-the-badge)
 ---
 
 ## Project Description
