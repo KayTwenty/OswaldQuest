@@ -1,5 +1,6 @@
 package main;
 
+import object.Boots;
 import object.Chest;
 import object.Door;
 import object.Key;
@@ -41,6 +42,11 @@ public class objectLoader {
         gp.obj[5] = new Chest();
         gp.obj[5].worldX = 10 * gp.tileSize;
         gp.obj[5].worldY = 8 * gp.tileSize;
+
+        // Spawn boots
+        gp.obj[7] = new Boots();
+        gp.obj[7].worldX = 37 * gp.tileSize;
+        gp.obj[7].worldY = 42 * gp.tileSize;
 
     }
 }

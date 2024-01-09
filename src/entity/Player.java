@@ -119,6 +119,10 @@ public class Player extends Entity {
                         System.out.println("Key: " + hasKey);
                     }
                 }
+                case "Boots" -> {
+                    speed += 2; // Adjust player movement speed
+                    gp.obj[i] = null;
+                }
             }
         }
     }
