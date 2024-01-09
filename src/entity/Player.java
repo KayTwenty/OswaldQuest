@@ -67,7 +67,7 @@ public class Player extends Entity {
                 direction = "down";
             } else if (keyH.leftPressed) {
                 direction = "left";
-            } else if (keyH.rightPressed) {
+            } else  {
                 direction = "right";
             }
 
@@ -107,18 +107,18 @@ public class Player extends Entity {
             String objectName = gp.obj[i].name;
 
             switch (objectName) {
-                case "Key":
+                case "Key" -> {
                     hasKey++;
                     gp.obj[i] = null;
                     System.out.println("Key: " + hasKey);
-                    break;
-                case "Door":
+                }
+                case "Door" -> {
                     if (hasKey > 0) {
                         gp.obj[i] = null;
                         hasKey--;
                         System.out.println("Key: " + hasKey);
                     }
-                    break;
+                }
             }
         }
     }
