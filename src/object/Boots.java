@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Boots extends SuperObject {
     public Boots() {
         name = "Boots";
+        description = "Make you go faster";
 
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/boots.png")));

@@ -7,6 +7,8 @@ import java.util.Objects;
 public class Key extends SuperObject {
     public Key() {
         name = "Key";
+        description = "It must unlock something";
+
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/key.png")));
         } catch (IOException e) {
