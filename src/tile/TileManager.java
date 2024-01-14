@@ -1,5 +1,6 @@
 package tile;
 
+import main.UtilityTool;
 import main.gamePanel;
 
 import javax.imageio.ImageIO;
@@ -25,40 +26,49 @@ public class TileManager {
         loadMap("map/world01v2.txt");
     }
 
+    // Get tile image
     public void getTileImage() {
+        // Grass Tiles
+        setup(0, "0", false);
+
+        // Wall Tiles
+        setup(1, "1", true);
+
+        // Water Tiles
+        setup(2, "2", true);
+
+        // Earth Tile
+        setup(3, "3", false);
+
+        // Tree Tiles
+        setup(4, "4", true);
+
+        // Sand Tiles
+        setup(5, "5", false);
+    }
+
+    // Setup tile image
+    public void setup(int index, String imageName, boolean collision) {
+        UtilityTool uTool = new UtilityTool();
+
         try {
-            // Grass Tile
-            tile[0] = new Tile();
-            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/0.png")));
+            String imagePath = "/tiles/" + imageName + ".png";
 
-            // Wall Tile
-            tile[1] = new Tile();
-            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/1.png")));
-            tile[1].collision = true;
-
-            // Water Tile
-            tile[2] = new Tile();
-            tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/2.png")));
-            tile[2].collision = true;
-
-            // Earth Tile
-            tile[3] = new Tile();
-            tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/3.png")));
-
-            // Tree Tile
-            tile[4] = new Tile();
-            tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/4.png")));
-            tile[4].collision = true;
-
-            // Sand Tile
-            tile[5] = new Tile();
-            tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("tiles/5.png")));
-
+            // Check if the resource exists
+            if (getClass().getResource(imagePath) == null) {
+                System.err.println("Error: Resource not found - " + imagePath);
+            } else {
+                tile[index] = new Tile();
+                tile[index].image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/tiles/" + imageName + ".png")));
+                tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
+                tile[index].collision = collision;
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error reading image for index " + index + ": " + imageName, e);
         }
     }
 
+    // Load map from text file
     public void loadMap(String filePath) {
         try {
             InputStream is = getClass().getClassLoader().getResourceAsStream(filePath);
@@ -87,7 +97,7 @@ public class TileManager {
             br.close();
 
         } catch (Exception e) {
-
+            throw new RuntimeException("Error reading map file: " + filePath, e);
         }
     }
 

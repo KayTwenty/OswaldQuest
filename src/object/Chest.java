@@ -3,14 +3,20 @@ package object;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.util.Objects;
+import main.gamePanel;
 
 public class Chest extends SuperObject {
-    public Chest() {
+    gamePanel gp;
+
+    public Chest(gamePanel gp) {
+        this.gp = gp;
+
         name = "Chest";
         description = "A sturdy box";
 
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/chest.png")));
+            uTool.scaleImage(image, gp.tileSize, gp.tileSize);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

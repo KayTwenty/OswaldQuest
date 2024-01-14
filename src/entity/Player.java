@@ -1,5 +1,6 @@
 package entity;
 
+import main.UtilityTool;
 import main.gamePanel;
 import main.keyHandler;
 
@@ -45,18 +46,35 @@ public class Player extends Entity {
     }
 
     public void getPlayerImage() {
+        up1 = setup("boy_up_1");
+        up2 = setup("boy_up_2");
+        down1 = setup("boy_down_1");
+        down2 = setup("boy_down_2");
+        left1 = setup("boy_left_1");
+        left2 = setup("boy_left_2");
+        right1 = setup("boy_right_1");
+        right2 = setup("boy_right_2");
+    }
+
+    public BufferedImage setup(String imageName) {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        String imagePath = "player/" + imageName + ".png";
+
         try {
-            up1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_up_1.png")));
-            up2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_up_2.png")));
-            down1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_down_1.png")));
-            down2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_down_2.png")));
-            left1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_left_1.png")));
-            left2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_left_2.png")));
-            right1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_right_1.png")));
-            right2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("player/boy_right_2.png")));
+            // Check if the resource exists
+            if (getClass().getClassLoader().getResource(imagePath) == null) {
+                System.err.println("Error: Resource not found - " + imagePath);
+            } else {
+                image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResource(imagePath)));
+                image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+            }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error reading image: " + imagePath, e);
         }
+
+        return image;
     }
 
     public void update() {
@@ -176,6 +194,7 @@ public class Player extends Entity {
                 }
             }
         }
-        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+
+        g2.drawImage(image, screenX, screenY, null);
     }
 }

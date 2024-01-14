@@ -14,7 +14,6 @@ public class UI {
     public String message = "";
     int messageCounter = 0;
     public boolean gameFinished = false;
-
     double playTime;
     DecimalFormat dFormat = new DecimalFormat("#0.00");
 
@@ -23,7 +22,7 @@ public class UI {
 
         arial_40 = new Font("Arial", Font.PLAIN, 40);
         arial_80B = new Font("Arial", Font.BOLD, 80);
-        Key key = new Key();
+        Key key = new Key(gp);
         keyImage = key.image;
     }
 

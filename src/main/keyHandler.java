@@ -12,6 +12,7 @@ public class keyHandler implements KeyListener {
 
     }
 
+    // Checks if the key is pressed
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
@@ -29,16 +30,13 @@ public class keyHandler implements KeyListener {
             rightPressed = true;
         }
 
-        // Debug Key
+        // Debug Key for drawing time
         if (code == KeyEvent.VK_T) {
-            if (!checkDrawTime) {
-                checkDrawTime = true;
-            } else if (checkDrawTime) {
-                checkDrawTime = false;
-            }
+            checkDrawTime = !checkDrawTime;
         }
     }
 
+    // Checks if the key is released
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();

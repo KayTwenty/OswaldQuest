@@ -28,7 +28,7 @@ public class Sound {
             // Get the volume control from this clip
             volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
         } catch (Exception e) {
-            System.out.println("Cannot open sound file: " + e);
+            throw new RuntimeException("Error reading soundtrack: " + e);
         }
     }
 
