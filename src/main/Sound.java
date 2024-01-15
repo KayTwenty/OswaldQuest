@@ -11,6 +11,7 @@ public class Sound {
     URL[] soundURL = new URL[30];
     FloatControl volumeControl;
 
+    // Array of sound files
     public Sound() {
         soundURL[0] = getClass().getResource("/sound/OswaldsQuest.wav");
         soundURL[1] = getClass().getResource("/sound/coin.wav");
@@ -19,6 +20,7 @@ public class Sound {
         soundURL[4] = getClass().getResource("/sound/winner.wav");
     }
 
+    // Set the file to play
     public void setFile(int i) {
         try {
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundURL[i]);

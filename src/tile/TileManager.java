@@ -37,7 +37,7 @@ public class TileManager {
         // Water Tiles
         setup(2, "2", true);
 
-        // Earth Tile
+        // Earth Tiles
         setup(3, "3", false);
 
         // Tree Tiles

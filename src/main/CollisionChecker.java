@@ -9,6 +9,7 @@ public class CollisionChecker {
         this.gp = gp;
     }
 
+    // Prevent entity from going out of the map
     public void checkTile(Entity entity) {
         // Cords to find col and row
         int entityLeftWorldX = entity.worldX + entity.solidArea.x;
