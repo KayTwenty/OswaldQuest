@@ -56,7 +56,7 @@ public class TileManager {
 
             // Check if the resource exists
             if (getClass().getResource(imagePath) == null) {
-                System.err.println("Error: Resource not found - " + imagePath);
+                System.err.println("Error: Asset not found - " + imagePath);
             } else {
                 tile[index] = new Tile();
                 tile[index].image = ImageIO.read(Objects.requireNonNull(getClass().getResource("/tiles/" + imageName + ".png")));
@@ -64,7 +64,7 @@ public class TileManager {
                 tile[index].collision = collision;
             }
         } catch (IOException e) {
-            throw new RuntimeException("Error reading image for index " + index + ": " + imageName, e);
+            throw new RuntimeException("Error reading asset for index " + index + ": " + imageName, e);
         }
     }
 
@@ -108,6 +108,7 @@ public class TileManager {
         while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
             int tileNum = mapTileNum[worldCol][worldRow];
 
+            // Cords to find col and row
             int worldX = worldCol * gp.tileSize;
             int worldY = worldRow * gp.tileSize;
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
@@ -122,6 +123,7 @@ public class TileManager {
             }
             worldCol++;
 
+            // If the column reaches the max column, reset it and increase the row
             if (worldCol == gp.maxWorldCol) {
                 worldCol = 0;
                 worldRow++;

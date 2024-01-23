@@ -14,6 +14,7 @@ public class Boots extends SuperObject {
         name = "Boots";
         description = "Make you go faster";
 
+        // Load the image from the resources folder
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/boots.png")));
             uTool.scaleImage(image, gp.tileSize, gp.tileSize);

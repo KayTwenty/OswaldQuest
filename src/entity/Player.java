@@ -62,16 +62,17 @@ public class Player extends Entity {
 
         String imagePath = "player/" + imageName + ".png";
 
+        // Check if the asset exists
         try {
-            // Check if the resource exists
+            // Check if the asset exists
             if (getClass().getClassLoader().getResource(imagePath) == null) {
-                System.err.println("Error: Resource not found - " + imagePath);
+                System.err.println("Error: Asset not found - " + imagePath);
             } else {
                 image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResource(imagePath)));
                 image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
             }
         } catch (IOException e) {
-            throw new RuntimeException("Error reading image: " + imagePath, e);
+            throw new RuntimeException("Error reading asset: " + imagePath, e);
         }
 
         return image;

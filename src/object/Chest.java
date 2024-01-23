@@ -14,6 +14,7 @@ public class Chest extends SuperObject {
         name = "Chest";
         description = "A sturdy box";
 
+        // Load the image from the resources folder
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/chest.png")));
             uTool.scaleImage(image, gp.tileSize, gp.tileSize);

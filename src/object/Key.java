@@ -14,6 +14,7 @@ public class Key extends SuperObject {
         name = "Key";
         description = "It must unlock something";
 
+        // Load the image from the resources folder
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("objects/key.png")));
             uTool.scaleImage(image, gp.tileSize, gp.tileSize);

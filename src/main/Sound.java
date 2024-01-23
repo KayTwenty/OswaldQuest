@@ -30,7 +30,7 @@ public class Sound {
             // Get the volume control from this clip
             volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
         } catch (Exception e) {
-            throw new RuntimeException("Error reading soundtrack: " + e);
+            throw new RuntimeException("Error reading sound asset: " + e);
         }
     }
 
