@@ -45,6 +45,12 @@ public class TileManager {
 
         // Sand Tiles
         setup(5, "5", false);
+
+        // Apple Tree Tiles
+        setup(6, "6", true);
+
+        // Wooden Floor Tiles
+        setup(7, "7", false);
     }
 
     // Setup tile image
